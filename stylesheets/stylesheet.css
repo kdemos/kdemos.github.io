@@ -366,7 +366,10 @@ Full-Width Styles
   background: #212121;
 }
 
-
+p.note {
+  background: #fff;
+  padding: 7px;
+}
 
 /*******************************************************************************
 Small Device Styles
