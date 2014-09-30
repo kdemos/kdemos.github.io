@@ -361,6 +361,7 @@
         });
 
         $('.plugin-options :input').on('change', function () {
+          $.toast().reset();
           generateCode();
         });
 
