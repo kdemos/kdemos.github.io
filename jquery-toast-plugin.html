@@ -54,7 +54,65 @@
 
         </ul>
 
-        
+        <div class="plugin-options">
+          <p><label for="toast-text">Text</label><input type="text" id="toast-text" class="toast-text"></p>
+          <p><label for="toast-heading">Heading</label><input type="text" id="toast-heading" class="toast-heading"></p>
+          <p>
+            <label for="toast-transition">Transition</label>
+            <select name="toast-transition" id="toast-transition" class="toast-transition">
+              <option value="fade">Fade</option>
+              <option value="slide">Slide</option>
+            </select>
+          </p>
+          <p>
+            <label for="allow-toast-close">Allow Toast Close</label>
+            <select name="allow-toast-close" id="allow-toast-close" class="allow-toast-close">
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="auto-hide-toast">Auto Hide</label>
+            <select name="auto-hide-toast" id="auto-hide-toast" class="auto-hide-toast">
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </p>
+
+          <p class="autohide-after">
+            <label for="autohide-after">Hide (with transition^) after (ms)</label>
+            <input type="text" id="autohide-after" class="autohide-after">
+          </p>
+
+          <p class="">
+            <label for="stack-toasts">Stack toasts</label>
+            <select name="stack-toasts" id="stack-toasts" class="stack-toasts">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </p>
+  
+          <p class="stack-length">
+            <label for="stack-length">Stack Length </label>
+            <input type="text" id="stack-length" class="stack-length">
+          </p>
+
+          <p class="">
+            <label for="toast-position">Toast Position</label>
+            <select name="toast-position" id="toast-position" class="toast-position">
+              <option value="bottom-left">Bottom Left</option>
+              <option value="bottom-right">Bottom Right</option>
+              <option value="top-left">Top Left</option>
+              <option value="top-right">Top Right</option>
+              <option value="top-center">Top Center</option>
+              <option value="bottom-center">Bottom Center</option>
+              <option value="mid-center">Mid Center</option>
+              <option value="custom-position">Custom</option>
+            </select>
+          </p>
+
+        </div>
         
         <p class="note"><strong>Note</strong>: Changing the position will reset the existing toast messages.</p>
       </section>
