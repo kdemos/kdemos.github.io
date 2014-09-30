@@ -28,31 +28,33 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>Jquery Toast Plugin</h3>
-        <p>Hey fellas, jquery toast plugin, as the name specifies, is the jquery plugin that lets you show beautiful toast messages to the user with haste.</p>
-        <p>It provides the user with a ton (please don't go and start counting them) of options. Please checkout the demo first and then we'll move onto explaining the available options and how to hack the plugin.</p>
+        <p>Hey fellas, jquery toast plugin, as the name specifies, is the jquery plugin that lets you <strong>show beautiful toast messages</strong> to the user with haste.</p>
+        <p>It provides the user with a ton (please don't go and start counting them) of <strong>options</strong>. Below are some of the features of the plugin</p>
 
         <ul>
+          <li>Custom <strong>toast background color</strong> and <strong>text color</strong></li>
+          <li>Ability to <strong>hack the CSS</strong> to add your own thing</li>
           <li>
-            Show the toast at bottom left corner
-            <a href="#" class="show-toast at-bottom-left fade">Fade</a> | 
-            <a href="#" class="show-toast at-bottom-left sticky">Sticky</a>
+            <strong>Text can be</strong> provided in the form of
+            <ul>
+              <li><strong>Array</strong> (It's elements will be changed to an un ordered list)</li>
+              <li><strong>Simple text</strong></li>
+              <li><strong>HTML</strong></li>
+            </ul>
           </li>
-          <li>
-            Show the toast at bottom right corner
-            <a href="#" class="show-toast at-bottom-right fade">Fade</a> | 
-            <a href="#" class="show-toast at-bottom-right sticky">Sticky</a>
-          </li>
-          <li>
-            Show the toast at top left corner
-            <a href="#" class="show-toast at-top-left fade">Fade</a> | 
-            <a href="#" class="show-toast at-top-left sticky">Sticky</a>
-          </li>
-          <li>
-            Show the toast at top right corner
-            <a href="#" class="show-toast at-top-right">Fade</a> | 
-            <a href="#" class="show-toast at-top-right">Sticky</a>
-          </li>
+          <li><strong>Events support</strong> i.e. <code>beforeHide</code>, <code>afterHidden</code>, <code>beforeShow</code>, <code>afterShown</code></li>
+
+          <li><code>Fade</code> and <code>Slide</code> show/hide transitions support (More to come)</li>
+
+          <li>You can <strong>position the toast, wherever you want</strong> there is support for <code>top-left</code>, <code>top-right</code> <code>bottom-left</code> and <strong>bottom-right</strong>, <code>top-center</code>, <code>bottom-center</code> and <code>mid-center</code> ...sighs! That's a whole lot of options, isn't it? No, you say. Ok then here is the most exciting thing, you can also introduce <strong>your own positioning</strong> just <strong>by passing a simple js object</strong> containing <code>{ top: - , bottom: -, left: -, right: - }</code> </li>
+
+          <li>Ability to add <strong>sticky toast</strong></li>
+
+          <li>Optional <strong>stack length can be defined</strong> (i.e. maximum number of toasts that can be shown at once)</li>
+
         </ul>
+
+        
         
         <p class="note"><strong>Note</strong>: Changing the position will reset the existing toast messages.</p>
       </section>
