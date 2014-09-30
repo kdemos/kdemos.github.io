@@ -5,3 +5,5 @@
 .plugin-options a.btn { padding: 2px; background: #0090ff; border: 1px solid #ccc; margin-top: 9px; display: block; width: 100px; text-align: center; color: white; }
 .plugin-options a.btn:hover { text-decoration: none; }
 .plugin-options .generated-code { margin-top: 50px; display: block; }
+
+.plugin-options .sub-item { background: white; padding: 10px; margin-bottom: 15px; margin-top: 9px; }
