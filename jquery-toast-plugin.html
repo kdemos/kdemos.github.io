@@ -7,7 +7,7 @@
     <meta name="description" content="Kamran Ahmed">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/toast-page.css">
     <title>Kamran Ahmed</title>
   </head>
 
@@ -55,6 +55,8 @@
         </ul>
 
         <div class="plugin-options">
+          <h3>Customize Plugin</h3>
+
           <p><label for="toast-text">Text</label><input type="text" id="toast-text" class="toast-text"></p>
           <p><label for="toast-heading">Heading</label><input type="text" id="toast-heading" class="toast-heading"></p>
           <p>
@@ -80,7 +82,7 @@
             </select>
           </p>
 
-          <p class="autohide-after">
+          <p class="autohide-after" style="display: none;">
             <label for="autohide-after">Hide (with transition^) after (ms)</label>
             <input type="text" id="autohide-after" class="autohide-after">
           </p>
@@ -93,7 +95,7 @@
             </select>
           </p>
   
-          <p class="stack-length">
+          <p class="stack-length" style="display: none;">
             <label for="stack-length">Stack Length </label>
             <input type="text" id="stack-length" class="stack-length">
           </p>
@@ -112,9 +114,80 @@
             </select>
           </p>
 
+          <div class="custom-toast-position" style="display:none;">
+            <label for="custom-toast-position">Custom Toast Position</label>
+            <ul>
+              <li>
+                <label for="left-position">Left</label>
+                <input type="text" class="left-position" id="left-position">
+              </li>
+              <li>
+                <label for="right-position">Right</label>
+                <input type="text" class="right-position" id="right-position">
+              </li>
+              <li>
+                <label for="top-position">Top</label>
+                <input type="text" class="top-position" id="top-position">
+              </li>
+              <li>
+                <label for="bottom-position">Bottom</label>
+                <input type="text" class="bottom-position" id="bottom-position">
+              </li>
+            </ul>
+          </div>
+
+          <p>
+            <label for="toast-bg">Background Color</label>
+            <input type="color" id="toast-bg" class="toast-bg" value="#555555">
+          </p>
+          
+          <p>
+            <label for="toast-text-color">Text Color</label>
+            <input type="color" id="toast-text-color" class="toast-text-color" value="#eeeeee">
+          </p>
+
+          <p class="">
+            <label for="text-align">Text Alignment</label>
+            <select name="text-align" id="text-align" class="text-align">
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+              <option value="center">Center</option>
+            </select>
+          </p>
+
+          <p class="">
+            <label for="add-toast-events">Toast Events</label>
+            <select name="add-toast-events" id="add-toast-events" class="add-toast-events">
+              <option value="false">False</option>
+              <option value="true">True</option>
+            </select>
+          </p>
+          
+          <p><a href="#" class="btn generate-toast">Generate</a></p>
+
+          <div class="generated-code">
+            <pre style="padding:0px; background: #f0f3f3;"><code style="margin:0px;" class="highlight">
+<span class="nd">$</span>.<span class="nf">toast</span>({
+    <span class="toast-text-line"><span class="k">text</span>: '<span class="toast-text s">Hey there fellas, here is a simple toast. Change the options above and then see the code that generates that toast</span>',</span>
+    <span class="toast-heading-line"><span class="k">heading</span>: '<span class="toast-heading s">How to use</span>',</span>
+    <span class="toast-transition-line"><span class="k">showHideTransition</span>: '<span class="toast-transition s">fade</span>',</span>
+    <span class="toast-allowToastClose-line"><span class="k">allowToastClose</span>: <spna class="kt toast-allowToastClose">true</spna>,</span>
+    <span class="toast-hideAfter-line"><span class="k">hideAfter</span>: <span class="n toast-hideAfter">2000</span>,</span>
+    <span class="toast-stackLength-line"><span class="k">stack</span>: <span class="n toast-stackLength">5</span>,</span>
+    <span class="toast-position-string-line"><span class="k">position</span>: '<span class="s toast-position">bottom-left</span>',</span>
+    <span class="toast-position-string-obj"><span class="k">position</span>: <span class="s toast-position">{ <span class="k">left</span> : <span class="n toast-position-left">20</span>, <span class="k">right</span> : <span class="n toast-position-right">20</span>, <span class="k">top</span> : <span class="n toast-position-top">20</span>, <span class="k">bottom</span> : <span class="n toast-position-bottom">20</span> }</span>,</span>
+    <span class="toast-bgColor-line"><span class="k">bgColor</span>: '<span class="s toast-bgColor">#444</span>',</span>
+    <span class="toast-textColor-line"><span class="k">textColor</span>: '<span class="s toast-textColor">#eee</span>',</span>
+    <span class="toast-textAlign-line"><span class="k">textAlign</span>: '<span class="s toast-textAlign">left</span>',</span>
+    <span class="toast-beforeShow-line"><span class="nb">beforeShow</span>: <span class="nf toast-beforeShow">function ()</span> {},</span>
+    <span class="toast-afterShown-line"><span class="nb">afterShown</span>: <span class="nf toast-afterShown">function ()</span> {},</span>
+    <span class="toast-beforeHide-line"><span class="nb">beforeHide</span>: <span class="nf toast-beforeHide">function ()</span> {},</span>
+    <span class="toast-afterHidden-line"><span class="nb">afterHidden</span>: <span class="nf toast-afterHidden">function ()</span> {}</span>
+});
+              </code></pre>
+          </div>
         </div>
-        
-        <p class="note"><strong>Note</strong>: Changing the position will reset the existing toast messages.</p>
+
       </section>
     </div>
 
@@ -125,7 +198,7 @@
       </footer>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/jquery-toast-plugin.min.js"></script>
   </body>
 </html>
