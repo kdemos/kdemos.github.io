@@ -175,7 +175,7 @@
           <div class="generated-code">
             <pre style="padding:0px; background: #f0f3f3;"><code style="margin:0px;" class="highlight">
 <span class="nd">$</span>.<span class="nf">toast</span>({
-    <span class="toast-text-line"><span class="k">text</span>: '<span class="toast-text s">Hey there fellas, here is a simple toast. Change the options above and then see the code that generates that toast</span>',</span>
+    <span class="toast-text-line"><span class="k">text</span>: "<span class="toast-text s">Hey there fellas, here is a simple toast. Change the options above and then see the code that generates that toast</span>",</span>
     <span class="toast-heading-line"><span class="k">heading</span>: '<span class="toast-heading s">How to use</span>',</span>
     <span class="toast-transition-line"><span class="k">showHideTransition</span>: '<span class="toast-transition s">fade</span>',</span>
     <span class="toast-allowToastClose-line"><span class="k">allowToastClose</span>: <spna class="kt toast-allowToastClose">true</spna>,</span>
@@ -229,7 +229,7 @@
 
           if ( text ) { 
             $('.toast-text-line').show();
-            $('.toast-text-line .toast-text').text( text.replace("'","\\'") );
+            $('.toast-text-line .toast-text').text( text );
           } else {
             $('.toast-text-line').hide() 
             $('.toast-text-line .toast-text').text('');
@@ -344,10 +344,6 @@
           
         }
 
-        function setupView () {
-          
-        }
-
         $('#top-position').on('change', function () {
           $('#bottom-position').val('auto');
         });
@@ -365,9 +361,70 @@
         });
 
         $('.plugin-options :input').on('change', function () {
-          setupView();
           generateCode();
         });
+
+        $('.generate-toast').on('click', function( e ) {
+          e.preventDefault();
+          generateToast();
+        });
+
+        function generateToast () {
+
+          var options = {};
+
+          if ( $('.toast-text-line').is(':visible') ) {
+            options.text = $('.toast-text-line .toast-text').text();
+          }
+
+          if ( $('.toast-heading-line').is(':visible') ) {
+            options.heading = $('.toast-heading').text();
+          };
+
+          if ( $('.toast-transition-line').is(':visible') ) {
+            options.showHideTransition = $('.toast-transition-line .toast-transition').text();
+          };
+
+          if ( $('.toast-allowToastClose-line').is(':visible') ) {
+            options.allowToastClose = ( $('.toast-allowToastClose-line .toast-allowToastClose').text() === 'true' ) ? true : false;
+          };
+
+          if ( $('.toast-hideAfter-line').is(':visible') ) {
+            options.hideAfter = parseInt($('.toast-hideAfter-line .toast-hideAfter').text(), 10) || false;
+          };
+
+          if ( $('.toast-stackLength-line').is(':visible') ) {
+            options.stack = parseInt($('.toast-stackLength-line .toast-stackLength').text(), 10) || false;
+          };
+
+          if ( $('.toast-position-string-line').is(':visible') ) {
+            options.position = $('.toast-position-string-line .toast-position').text();
+          };
+
+          if ( $('.toast-position-string-obj').is(':visible') ) {
+            options.position = {};
+
+            options.position.left =  parseFloat( $('.toast-position .toast-position-left') ) || 'auto';
+            options.position.right =  parseFloat( $('.toast-position .toast-position-right') ) || 'auto';
+            options.position.top =  parseFloat( $('.toast-position .toast-position-top') ) || 'auto';
+            options.position.bottom =  parseFloat( $('.toast-position .toast-position-bottom') ) || 'auto';
+          };
+
+          if ( $('.toast-bgColor-line').is(':visible') ) {
+            options.bgColor = $('#toast-bg').val();
+          };
+
+          if ( $('.toast-text-color').is(':visible') ) {
+            options.textColor = $('#toast-text-color').val();
+          };
+
+
+          if ( $("#text-align").is(':visible') ) {
+            options.textAlign = $('#text-align').val();
+          };
+
+          $.toast( options );
+        }
 
         generateCode();
 
