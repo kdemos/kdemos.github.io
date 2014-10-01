@@ -84,6 +84,12 @@
           </li>
         </ul>
         
+        <p>To reset/remove any toast you can do the following:</p>
+        <pre><code>var myToast = $.toast('Some toast that needs to be removed.');<br>myToast.reset(); // remove the toast "Some toast that needs to be removed"</code></pre>
+
+        <p>What if I want to reset all the toasts at once? You may ask. Well in that case, you can do the following:</p>
+        <pre><code>$.toast().reset('all');</code></pre>
+
         <h3>Features</h3>
         <ul>
           <li>Custom <strong>toast background color</strong> and <strong>text color</strong></li>
@@ -124,6 +130,7 @@
             <select name="toast-transition" id="toast-transition" class="toast-transition">
               <option value="fade">Fade</option>
               <option value="slide">Slide</option>
+              <option value="plain">Plain</option>
             </select>
           </p>
           <p>
@@ -228,21 +235,21 @@
           <div class="generated-code">
             <pre style="padding:0px; background: #f0f3f3;"><code style="margin:0px;" class="highlight">
 <span class="nd">$</span>.<span class="nf">toast</span>({
-    <span class="toast-text-line"><span class="k">text</span>: "<span class="toast-text s">Hey there fellas, here is a simple toast. Change the options above and then see the code that generates that toast</span>",</span>
-    <span class="toast-heading-line"><span class="k">heading</span>: '<span class="toast-heading s">How to use</span>',</span>
-    <span class="toast-transition-line"><span class="k">showHideTransition</span>: '<span class="toast-transition s">fade</span>',</span>
-    <span class="toast-allowToastClose-line"><span class="k">allowToastClose</span>: <spna class="kt toast-allowToastClose">true</spna>,</span>
-    <span class="toast-hideAfter-line"><span class="k">hideAfter</span>: <span class="n toast-hideAfter">3000</span>,</span>
-    <span class="toast-stackLength-line"><span class="k">stack</span>: <span class="n toast-stackLength">5</span>,</span>
-    <span class="toast-position-string-line"><span class="k">position</span>: '<span class="s toast-position">bottom-left</span>',</span>
-    <span class="toast-position-string-obj"><span class="k">position</span>: <span class="s toast-position">{ <span class="k">left</span> : <span class="n toast-position-left">20</span>, <span class="k">right</span> : <span class="n toast-position-right">20</span>, <span class="k">top</span> : <span class="n toast-position-top">20</span>, <span class="k">bottom</span> : <span class="n toast-position-bottom">20</span> }</span>,</span>
-    <span class="toast-bgColor-line"><span class="k">bgColor</span>: '<span class="s toast-bgColor">#444</span>',</span>
-    <span class="toast-textColor-line"><span class="k">textColor</span>: '<span class="s toast-textColor">#eee</span>',</span>
-    <span class="toast-textAlign-line"><span class="k">textAlign</span>: '<span class="s toast-textAlign">left</span>',</span>
-    <span class="toast-beforeShow-line"><span class="nb">beforeShow</span>: <span class="nf toast-beforeShow">function ()</span> {},</span>
-    <span class="toast-afterShown-line"><span class="nb">afterShown</span>: <span class="nf toast-afterShown">function ()</span> {},</span>
-    <span class="toast-beforeHide-line"><span class="nb">beforeHide</span>: <span class="nf toast-beforeHide">function ()</span> {},</span>
-    <span class="toast-afterHidden-line"><span class="nb">afterHidden</span>: <span class="nf toast-afterHidden">function ()</span> {}</span>
+    <span class="toast-text-line"><span class="k">text</span>: "<span class="toast-text s">Hey there fellas, here is a simple toast. Change the options above and then see the code that generates that toast</span>", <span class="c">// Text that is to be shown in the toast</span></span>
+    <span class="toast-heading-line"><span class="k">heading</span>: '<span class="toast-heading s">How to use</span>', <span class="c">// Optional heading to be shown on the toast</span></span>
+    <span class="toast-transition-line"><span class="k">showHideTransition</span>: '<span class="toast-transition s">fade</span>', <span class="c">// fade, slide or plain</span></span>
+    <span class="toast-allowToastClose-line"><span class="k">allowToastClose</span>: <spna class="kt toast-allowToastClose">true</spna>, <span class="c">// Boolean value <span class="kt">true</span> or <span class="kt">false</span></span></span>
+    <span class="toast-hideAfter-line"><span class="k">hideAfter</span>: <span class="n toast-hideAfter">3000</span>, <span class="c">// <span class="kt">false</span> to make it sticky or number representing the miliseconds as time after which toast needs to be hidden</span></span>
+    <span class="toast-stackLength-line"><span class="k">stack</span>: <span class="n toast-stackLength">5</span>, <span class="c">// <span class="kt">false</span> if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time</span></span>
+    <span class="toast-position-string-line"><span class="k">position</span>: '<span class="s toast-position">bottom-left</span>', <span class="c">// bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values</span></span>
+    <span class="toast-position-string-obj"><span class="k">position</span>: <span class="s toast-position">{ <span class="k">left</span> : <span class="n toast-position-left">20</span>, <span class="k">right</span> : <span class="n toast-position-right">20</span>, <span class="k">top</span> : <span class="n toast-position-top">20</span>, <span class="k">bottom</span> : <span class="n toast-position-bottom">20</span> }</span>, <span class="c">// bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values</span></span>
+    <span class="toast-bgColor-line"><span class="k">bgColor</span>: '<span class="s toast-bgColor">#444</span>', <span class="c"> // Background color of the toast</span></span>
+    <span class="toast-textColor-line"><span class="k">textColor</span>: '<span class="s toast-textColor">#eee</span>', <span class="c"> // Text color of the toast</span></span>
+    <span class="toast-textAlign-line"><span class="k">textAlign</span>: '<span class="s toast-textAlign">left</span>', <span class="c"> // Text alignment i.e. left, right or center</span></span>
+    <span class="toast-beforeShow-line"><span class="nb">beforeShow</span>: <span class="nf toast-beforeShow">function ()</span> {}, <span class="c">// will be triggered before the toast is shown</span></span>
+    <span class="toast-afterShown-line"><span class="nb">afterShown</span>: <span class="nf toast-afterShown">function ()</span> {}, <span class="c">// will be triggered after the toat has been shown</span></span>
+    <span class="toast-beforeHide-line"><span class="nb">beforeHide</span>: <span class="nf toast-beforeHide">function ()</span> {}, <span class="c">// will be triggered before the toast gets hidden</span></span>
+    <span class="toast-afterHidden-line"><span class="nb">afterHidden</span>: <span class="nf toast-afterHidden">function ()</span> {} <span class="c"> // will be triggered after the toast has been hidden</span></span>
 });
               </code></pre>
           </div>
@@ -250,13 +257,6 @@
 
       </section>
     </div>
-
-    <!-- FOOTER  -->
-    <!-- <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a target="_blank" href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div> -->
 
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/jquery.toast.min.js"></script>
@@ -414,7 +414,7 @@
         });
 
         $('.plugin-options :input').on('change', function () {
-          $.toast().reset();
+          $.toast().reset('all');
           generateCode();
         });
 
