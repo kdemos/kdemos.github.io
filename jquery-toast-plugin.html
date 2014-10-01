@@ -32,6 +32,59 @@
         <p>Hey fellas, jquery toast plugin, as the name specifies, is the jquery plugin that lets you <strong>show beautiful toast messages</strong> to the user with haste.</p>
         <p>It provides the user with a ton (please don't go and start counting them) of <strong>options</strong>. Below are some of the features of the plugin</p>
 
+        <h3>Basic Demos</h3>
+        <p>Before I go into the detail of plugin, have a look at the following quick demos:</p>
+        <ul>
+          <li>
+            <a href="#" class="text-toast">Simple <strong>non sticky</strong> fade transitioned toast using some random text</a><br>
+            <pre><code>$.toast("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur doloremque eveniet eius eaque dicta repudiandae illo ullam. Minima itaque sint magnam dolorum asperiores repudiandae dignissimos expedita, voluptatum vitae velit.")</code></pre><br>
+            <a href="#" class="sticky-text-toast">Simple <strong>sticky</strong> fade transitioned toast using some random text</a><br>
+            <pre><code>$.toast({
+  text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur doloremque eveniet eius eaque dicta repudiandae illo ullam. Minima itaque sint magnam dolorum asperiores repudiandae dignissimos expedita, voluptatum vitae velit.",
+  hideAfter : false
+})</code></pre><br>
+            <a href="#" class="html-toast">Simple <strong>non sticky</strong> fade transitioned toast using some HTML</a><br>
+            <pre><code>$.toast("Let's test some HTML stuff... &lt;a href='#'>github&lt;/a>")</code></pre><br>
+            <a href="#" class="sticky-htmlcss-toast">Simple <strong>sticky</strong> fade transitioned toast using some HTML and CSS</a><br>
+            <pre><code>$.toast({
+  text : "&lt;strong&gt;Remember!&lt;/strong&gt; You can &lt;span style='font-weight: bold; color:red;' class='horribly-styled'&gt;always&lt;/span&gt; introduce your own &times; HTML and &lt;span style='font-size: 18px;'&gt;CSS&lt;/span&gt; in the toast.",
+  hideAfter : false
+})</code></pre><br>
+            <a href="#" class="array-toast">Simple <strong>non sticky</strong> fade transitioned toast using an array</a><br>
+            <pre><code>$.toast(["Ubuntu : One of it's kind", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"])</code></pre><br>
+            <a href="#" class="sticky-array-toast">Simple <strong>sticky</strong> fade transitioned toast using an array</a><br>
+            <pre><code>$.toast({
+  text : ["Ubuntu : One of it's kind", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"],
+  hideAfter : false
+})</code></pre><br>
+            <a href="#" class="html-toast-slide">Simple <strong>non sticky</strong> slide transitioned toast through </a><br>
+            <pre><code>$.toast({ 
+  text : "Let's test some HTML stuff... &lt;a href='#'>github&lt;/a>", 
+  showHideTransition : 'slide' 
+})</code></pre><br>
+            <a href="#" class="sticky-html-toast-slide">Simple <strong>sticky</strong> slide transitioned toast through </a><br>
+            <pre><code>$.toast({ 
+  text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad molestias illo illum, modi, velit, excepturi, commodi ipsum itaque deserunt voluptates reprehenderit ipsa suscipit optio rem voluptate assumenda fuga explicabo.", 
+  showHideTransition : 'slide',
+  hideAfter : false
+})</code></pre><br>
+            <a href="#" class="array-toast-slide">...<strong>non sticky</strong> slide transitioned toast using array</a><br>
+            <pre><code>$.toast({ 
+  text : ["Ubuntu : One of it's kind", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"], 
+  showHideTransition : 'slide' 
+})</code></pre><br>
+            <a href="#" class="sticky-array-toast-slide">...<strong>sticky</strong> slide transitioned toast using array plus different formatting</a><br>
+            <pre><code>$.toast({ 
+  text : ["Ubuntu : One of it's &lt;strong&gt;kind&lt;/strong&gt;", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"], 
+  showHideTransition : 'slide',
+  hideAfter : false,
+  bgColor : 'blue',
+  textColor : '#eee'
+})</code></pre><br>
+          </li>
+        </ul>
+        
+        <h3>Features</h3>
         <ul>
           <li>Custom <strong>toast background color</strong> and <strong>text color</strong></li>
           <li>Ability to <strong>hack the CSS</strong> to add your own thing</li>
@@ -91,7 +144,7 @@
 
           <p class="autohide-after sub-item">
             <label for="autohide-after">Hide (with transition^) after (ms)</label>
-            <input type="text" id="autohide-after" class="autohide-after" value="2000">
+            <input type="text" id="autohide-after" class="autohide-after" value="3000">
           </p>
 
           <p class="">
@@ -145,7 +198,7 @@
 
           <p>
             <label for="toast-bg">Background Color</label>
-            <input type="color" id="toast-bg" class="toast-bg" value="#555555">
+            <input type="color" id="toast-bg" class="toast-bg" value="#444444">
           </p>
           
           <p>
@@ -179,7 +232,7 @@
     <span class="toast-heading-line"><span class="k">heading</span>: '<span class="toast-heading s">How to use</span>',</span>
     <span class="toast-transition-line"><span class="k">showHideTransition</span>: '<span class="toast-transition s">fade</span>',</span>
     <span class="toast-allowToastClose-line"><span class="k">allowToastClose</span>: <spna class="kt toast-allowToastClose">true</spna>,</span>
-    <span class="toast-hideAfter-line"><span class="k">hideAfter</span>: <span class="n toast-hideAfter">2000</span>,</span>
+    <span class="toast-hideAfter-line"><span class="k">hideAfter</span>: <span class="n toast-hideAfter">3000</span>,</span>
     <span class="toast-stackLength-line"><span class="k">stack</span>: <span class="n toast-stackLength">5</span>,</span>
     <span class="toast-position-string-line"><span class="k">position</span>: '<span class="s toast-position">bottom-left</span>',</span>
     <span class="toast-position-string-obj"><span class="k">position</span>: <span class="s toast-position">{ <span class="k">left</span> : <span class="n toast-position-left">20</span>, <span class="k">right</span> : <span class="n toast-position-right">20</span>, <span class="k">top</span> : <span class="n toast-position-top">20</span>, <span class="k">bottom</span> : <span class="n toast-position-bottom">20</span> }</span>,</span>
@@ -199,17 +252,17 @@
     </div>
 
     <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
+    <!-- <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p>Published with <a target="_blank" href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
-    </div>
+    </div> -->
 
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/jquery-toast-plugin.min.js"></script>
 
     <script>
-      // You are about to see some "ugly" code that can be MUCH MUCH improved, 
+      // You are about to see some extremely horrible code that can be MUCH MUCH improved,
       // I've knowlingly done it that way, please don't judge me based upon this ;)
       $(document).ready(function () {
         
@@ -265,7 +318,7 @@
             $('.autohide-after').hide();
           } else {
             $('.toast-hideAfter-line').show();
-            $('.toast-hideAfter-line .toast-hideAfter').text( $('#autohide-after').val() ? $('#autohide-after').val() : 2000 );
+            $('.toast-hideAfter-line .toast-hideAfter').text( $('#autohide-after').val() ? $('#autohide-after').val() : 3000 );
             $('.autohide-after').show();
           }
 
@@ -368,6 +421,82 @@
         $('.generate-toast').on('click', function( e ) {
           e.preventDefault();
           generateToast();
+        });
+
+        $('.html-toast').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast("Let's test some HTML stuff... <a href='#'>github</a>")
+        });
+
+        $('.text-toast').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur doloremque eveniet eius eaque dicta repudiandae illo ullam. Minima itaque sint magnam dolorum asperiores repudiandae dignissimos expedita, voluptatum vitae velit.");
+        });
+
+        $('.sticky-text-toast').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({
+            text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur doloremque eveniet eius eaque dicta repudiandae illo ullam. Minima itaque sint magnam dolorum asperiores repudiandae dignissimos expedita, voluptatum vitae velit.",
+            hideAfter : false
+          })
+        });
+
+        $('.array-toast').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast(["Ubuntu : One of it's kind", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"]);
+        });
+
+        $('.sticky-array-toast').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({
+            text : ["Ubuntu : One of it's kind", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"],
+            hideAfter : false
+          })
+        });
+        
+        $('.array-toast-slide').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({
+            text : ["Ubuntu : One of it's kind", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"], 
+            showHideTransition : 'slide' 
+          })
+        });
+
+        $('.sticky-array-toast-slide').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({ 
+            text : ["Ubuntu : One of it's <strong>kind</strong>", "Sublime Text : Productivity unleashed", "HeidiSQL : Just love it", "Github : Just Lovely"], 
+            showHideTransition : 'slide',
+            hideAfter : false,
+            bgColor : 'blue',
+            textColor : '#eee'
+          })
+        });
+
+        $('.html-toast-slide').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({ 
+            text : "Let's test some HTML stuff... <a href='#'>github</a>", 
+            showHideTransition : 'slide' 
+          });
+        });
+
+        $('.sticky-html-toast-slide').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({ 
+            text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ad reiciendis magnam dolorum tempora, eum iusto, placeat aperiam numquam molestias quam saepe doloribus id laudantium sunt voluptas voluptatibus autem reprehenderit.", 
+            showHideTransition : 'slide',
+            hideAfter : false
+          });
+
+        });
+
+        $('.sticky-htmlcss-toast').on('click', function ( e ) {
+          e.preventDefault();
+          $.toast({
+            text : "<strong>Remember!</strong> You can <span style='font-weight: bold; color:red;' class='horribly-styled'>always</span> introduce your own × HTML and <span style='font-size: 18px;'>CSS</span> in the toast.",
+            hideAfter : false
+          });
         });
 
         function generateToast () {
