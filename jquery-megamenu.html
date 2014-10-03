@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mega Menu</title>
+	<link rel="stylesheet" href="stylesheets/digimeg.css">
+	<link rel="stylesheet" href="stylesheets/jquery-mega-menu-demo-page.css">
+</head>
+<body>
+	<div class="digimeg-nav-wrap">
+
+		<!-- Main menu items -->
+		<ul class="digimeg-group digimeg-main-nav">
+			<li>
+				<!-- Upper menu item -->
+				<!-- [data-subnav="define-subnav"] here define-sbunav is the id of the respective dropdown menu for this menu item -->
+				<a href="#" data-subnav="define-subnav" class="digimeg-nav-item">
+					Definitions
+					<!-- Active mark for this menu item -->
+					<span class="digimeg-active-mark"></span>
+				</a>
+				
+			</li>
+			<li>
+				<a href="#" data-subnav="voucher-subnav" class="digimeg-nav-item">
+					Vouchers
+					<span class="digimeg-active-mark"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#" data-subnav="final-subnav" class="digimeg-nav-item">
+					Final
+					<span class="digimeg-active-mark"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#" data-subnav="reports-subnav" class="digimeg-nav-item">
+					Reports
+					<span class="digimeg-active-mark"></span>
+				</a>
+			</li>
+		</ul>
+		<!-- /.digimeg-group.digimeg-main-nav -->
+
+		<!-- Sub navs for each of the upper menu items -->
+		<ul class="digimeg-nav-down-content digimeg-sub-nav">
+			<!-- Drop down for the upper nav items -->
+			<li id="define-subnav">
+				<div class="digimeg-nav-item-content digimeg-group">
+					<!-- digimeg-nav-chunk - reprensents a column in sub nav -->
+					<div class="digimeg-nav-chunk">
+						<h2>Definitions</h2>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<!-- /#define-subnav -->
+			<li id="voucher-subnav">
+				<div class="digimeg-nav-item-content digimeg-group">
+					<div class="digimeg-nav-chunk">
+						<h2>Vouchers</h2>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li id="final-subnav">
+				<div class="digimeg-nav-item-content digimeg-group">
+					<div class="digimeg-nav-chunk">
+						<h2>Finals</h2>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li id="reports-subnav">
+				<div class="digimeg-nav-item-content digimeg-group">
+					<div class="digimeg-nav-chunk">
+						<h2>Reports</h2>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+					<div class="digimeg-nav-chunk">
+						<ul>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Godown</a></li>
+							<li><a href="#">Account Level</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<!-- /.digimeg-nav-down-content.digimeg-sub-nav -->
+	</div>
+	<!-- /.digimeg-nav-wrap -->
+
+	<div class="temporary-content">
+		<h1>Digimeg - A jQuery based mega menu by Kamran Ahmed</h1>
+		<p>For the details about modifying this mega menu or adapting to your theme, look for the comments in the digimeg.js and index.html</p>
+		<p>Have fun :-)</p>
+	</div>
+
+	<script src="javascripts/jquery.js"></script>
+	<script src="javascripts/digimeg.js"></script>
+</body>
+</html>
