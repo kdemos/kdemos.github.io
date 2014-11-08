@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Kamran Ahmed">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/toast-page.css">
+    <title>Kamran Ahmed</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a target="_blank" id="forkme_banner" href="https://github.com/kamranahmedse/jq-track-mouse">View on GitHub</a>
+
+          <h1 id="project_title">Jquery Mouse Tracker</h1>
+          <h2 id="project_tagline">Let's track that little fella!</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Jquery Mouse Tracker</h3>
+        <p>Jquery mouse tacker, as the name specifies, is the jquery plugin that lets you <strong>put a text at the tail of mouse</strong> and it will track the mouse wherever it goes.</p>
+
+        <h3>Basic Demos</h3>
+        <p>Before I go into the detail of plugin, have a look at the following quick demos:</p>
+
+        <ul>
+
+          <li>
+            <p><a href="#" class="sticky-text-tracker"><strong>Sticky text tracker</strong> with string</a></p>
+            <pre><code>$.trackMouse("I am going to exhaust myself by tracking that little mouse.");</code></pre><br>
+          </li>
+
+          <li>
+            <p><a href="#" class="autohide-text-tracker"><strong>Autohide text tracker</strong> with string</a></p>
+<pre><code>$.trackMouse({
+  text : "I am going to exhaust that little fella for a while.",
+  autoHide : 2000
+});</code></pre><br>
+          </li>
+
+          <li>
+
+            <p><a href="#" class="array-tracker"><strong>Sticky text tracker</strong> with array</a></p>
+<pre><code>$.trackMouse([
+  "Step 1 : Checkout the demo.",
+  "Step 2 : Like it? Go through the readme for how-to instructions",
+  "Step 3 : Star the repository, if you like it"
+]);</code></pre><br>
+          </li>
+
+          <li>
+
+            <p><a href="#" class="autohide-array-tracker"><strong>Autohide text tracker</strong> with array</a></p>
+<pre><code>$.trackMouse({
+  text: [
+    "Step 1 : Checkout the demo.",
+    "Step 2 : Like it? Go through the readme for how-to instructions",
+    "Step 3 : Star the repository, if you like it"
+  ],
+  autoHide: 2000
+});</code></pre><br>
+          </li>
+
+          <li>
+            <p><a href="#" class="html-tracker"><strong>Sticky text tracker</strong> with HTML</a></p>
+<pre><code>$.trackMouse("Don't forget to &lt;strong&gt;star&lt;/strong&gt; the &lt;em&gt;repository&lt;/em&gt;.");</code></pre><br>
+          </li>
+
+          <li>
+            <p><a href="#" class="autohide-html-tracker"><strong>Autohide text tracker</strong> with HTML</a></p>
+<pre><code>$.trackMouse({
+  text : "Don't forget to &lt;strong&gt;star&lt;/strong&gt; the &lt;em&gt;repository&lt;/em&gt;.",
+  autoHide: 2000
+});</code></pre><br>
+          </li>
+
+          <li>
+            <p><a href="#" class="blinking-tracker"><strong>Blinking tracker</strong></a> (Will work for array, html and simple string)</p>
+<pre><code>$.trackMouse({
+  text : "Don't forget to &lt;strong&gt;star&lt;/strong&gt; the &lt;em&gt;repository&lt;/em&gt;.",
+  blink : 600 // In miliseconds
+});</code></pre><br>
+          </li>
+
+          <li>
+            <p><a href="#" class="blinking-autohide-tracker"><strong>Blinking tracker with autohide</strong></a> (Will work for array, html and simple string)</p>
+<pre><code>$.trackMouse({
+  text : "Don't forget to &lt;strong&gt;star&lt;/strong&gt; the &lt;em&gt;repository&lt;/em&gt;.",
+  blink : 800, // In miliseconds
+  autoHide : 5000 // Destroy after 3 seconds
+});</code></pre><br>
+          </li>
+
+        </ul>
+
+        <p>To <a href="#" class="reset-tracker">reset/remove</a> any toast you can do the following:</p>
+        <pre><code>var tracker = $.trackMouse("Track that little fella.");<br>tracker.reset(); // reset the tracker"</code></pre>
+        <p>or alternatively, if you don't have the reference</p>
+        <pre><code>$.trackMouse().reset();</code></pre>
+  
+        <h3>Features</h3>
+        <ul>
+          <li>
+            You can easily put some text to the tail of the mouse that will follow it wherever it would go. This text can be in the form of:
+            <ul>
+              <li>String - Simple text that will attach it self to the tail of the mouse</li>
+              <li>An array - the content of it will make an unordered list</li>
+              <li>HTML - HTML will be rendered at the tale of the mouse</li>
+            </ul>
+          </li>
+          <li>You can make this the tracker blink and it will blink at the rate specified</li>
+          <li>You can reset the tracker whenever you want</li>
+          <li>You can reset the tracker whenever you want</li>
+        </ul>
+
+        <h3>Ideas to use it</h3>
+        <p>You can use it however and wherever you want. Some possibilies are:</p>
+        <ul>
+          <li>That tracking text can act as a constant reminder to the user for something. For example let's say if there is some necessary action pending for the user, you can put this tracker to the mouse and it will keep reminding the user about that pending action</li>
+          <li>In case of some step by step action, you can put the tracker at mouse demonstrating the details of each of the step</li>
+          <li>After a user logs in, you can show a list of TODO items at the tail of mouse and hide it after some time.</li>
+        </ul>
+              
+
+        <p>For further details, please visit <a href="http://github.com/kamranahmedse" target="_blank">the repository</a> and consider going through the readme. For your feedback and critqiue, please consider sending me an email at <a href="mailto:kamranahmed.se@gmail.com" target="_blank">kamranahmed.se@gmail.com</a></p>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jq-track-mouse.js"></script>
+
+    <script>
+      // You are about to see some extremely horrible code that can be MUCH MUCH improved,
+      // I've intentionally done it that way, please don't judge me based upon this ;)
+      $(document).ready(function () {      
+        $('.sticky-text-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse("I am going to exhaust myself by tracking that little mouse.");
+        });
+
+        $('.autohide-text-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse({
+            text : "I am going to track that little fella for a while",
+            autoHide : 2000
+          });
+        });
+
+        $('.array-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse([
+            "Step 1 : Checkout the demo.",
+            "Step 2 : Like it? Go through the readme for how-to instructions",
+            "Step 3 : Star the repository, if you like it"
+          ]);
+        });
+
+        $('.autohide-array-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse({
+            text: [
+              "Step 1 : Checkout the demo.",
+              "Step 2 : Like it? Go through the readme for how-to instructions",
+              "Step 3 : Star the repository, if you like it"
+            ],
+            autoHide: 2000
+          });
+        });
+        
+        $('.html-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse("Don't forget to <strong>star</strong> the <em>repository</em>.");
+        });
+
+        $('.autohide-html-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse({
+            text : "Don't forget to <strong>star</strong> the <em>repository</em>.",
+            autoHide: 2000
+          });
+        });
+
+        $('.blinking-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse({
+            text : "Don't forget to <strong>star</strong> the <em>repository</em>.",
+            blink: 600
+          });
+        });
+
+        $('.blinking-autohide-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse({
+            text : "Don't forget to <strong>star</strong> the <em>repository</em>.",
+            blink : 800, // In miliseconds
+            autoHide : 5000 // Destroy after 3 seconds
+          });
+        });
+
+        $('.reset-tracker').on('click', function ( e ) {
+          e.preventDefault();
+          $.trackMouse().reset();
+        });
+
+      });
+    </script>
+  </body>
+</html>
