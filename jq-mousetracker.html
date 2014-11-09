@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/toast-page.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/jquery.toast.css">
     <title>Kamran Ahmed</title>
   </head>
 
@@ -171,6 +172,7 @@
 
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/jq-track-mouse.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.toast.min.js"></script>
 
     <script>
       // You are about to see some extremely horrible code that can be MUCH MUCH improved,
@@ -241,7 +243,16 @@
         });
 
         $('.target-tracker').on('click', function ( e ) { 
+          
           e.preventDefault();
+
+          $.toast({
+            text : "Tracker activated, please hover over the <strong style='color: red;'>red box below</strong> to see the tracker in action",
+            hideAfter : 5000,
+            showHideTransition : 'slide',
+            position : 'top-right'
+          });
+
           $.trackMouse({
             text : "Woahhh! Is it blood? Go away. Don't force this little mouse over it!",
             target : '#showtracker'
@@ -250,6 +261,14 @@
 
         $('.blinking-target-tracker').on('click', function ( e ) { 
           e.preventDefault();
+
+          $.toast({
+            text : "Tracker activated, please hover over the <strong style='color : yellow;'>yellow box</strong> below to see the tracker in action",
+            hideAfter : 5000,
+            showHideTransition : 'slide',
+            position : 'top-right'
+          });
+
           $.trackMouse({
             text : "That mouse will go blind, how much light can it's little eyes handle. Put it away!!!!",
             target : '#showblinkingtracker',
