@@ -101,6 +101,31 @@
 });</code></pre><br>
           </li>
 
+          <li>
+            <p><a href="#" class="target-tracker"><strong>Tracker upon some specific target only</strong></a><br>(Click the above link to activate the tracker and it will only be visible upon the reddish area given below)</p>
+<pre><code>$.trackMouse({
+  text : "Woahhh! Is it blood? Go away. Don't force this little mouse over it!",
+  target : '#showtracker'
+});</code></pre><br>
+
+            <div id="showtracker" style="display:block; width: 100%; height: 60px; background: red; margin: 0px; padding: 10px;">
+              
+            </div>
+          </li>
+
+          <li>
+            <p><a href="#" class="blinking-target-tracker"><strong>Blinking tracker upon some specific target only</strong></a><br>(Click the above link to activate the tracker and it will only be visible upon the yellow area given below)</p>
+<pre><code>$.trackMouse({
+  text : "That mouse will go blind, how much light can it's little eyes handle. Put it away!!!!",
+  target : '#showblinkingtracker',
+  blink : 600
+});</code></pre><br>
+
+            <div id="showblinkingtracker" style="display:block; width: 100%; height: 60px; background: yellow; margin: 0px; padding: 10px;">
+              
+            </div>
+          </li>
+
         </ul>
 
         <p>To <a href="#" class="reset-tracker">reset/remove</a> any toast you can do the following:</p>
@@ -121,16 +146,21 @@
           <li>You can make this the tracker blink and it will blink at the rate specified</li>
           <li>You can reset the tracker whenever you want</li>
           <li>You can reset the tracker whenever you want</li>
+          <li>A target can be specified so that the tracker may appear over that target element only. Also, the blinking tracker may be used for this purpose.</li>
         </ul>
 
         <h3>Ideas to use it</h3>
-        <p>You can use it however and wherever you want. Some possibilies are:</p>
+        <p>You can use it however and wherever you want. Some possibilies, when using the tracker over whole page i.e. when target is not specified, are:</p>
         <ul>
           <li>That tracking text can act as a constant reminder to the user for something. For example let's say if there is some necessary action pending for the user, you can put this tracker to the mouse and it will keep reminding the user about that pending action</li>
           <li>In case of some step by step action, you can put the tracker at mouse demonstrating the details of each of the step</li>
           <li>After a user logs in, you can show a list of TODO items at the tail of mouse and hide it after some time.</li>
         </ul>
-              
+        
+        <p>Some possibilities, when target is specified are:</p>      
+        <ul>
+          <li>Show tracker text upon any element, lets say an image, describing about that element.</li>
+        </ul>
 
         <p>For further details, please visit <a href="http://github.com/kamranahmedse" target="_blank">the repository</a> and consider going through the readme. For your feedback and critqiue, please consider sending me an email at <a href="mailto:kamranahmed.se@gmail.com" target="_blank">kamranahmed.se@gmail.com</a></p>
           </div>
@@ -206,7 +236,24 @@
           $.trackMouse({
             text : "Don't forget to <strong>star</strong> the <em>repository</em>.",
             blink : 800, // In miliseconds
-            autoHide : 5000 // Destroy after 3 seconds
+            autoHide : 5000 // Destroy after 5 seconds
+          });
+        });
+
+        $('.target-tracker').on('click', function ( e ) { 
+          e.preventDefault();
+          $.trackMouse({
+            text : "Woahhh! Is it blood? Go away. Don't force this little mouse over it!",
+            target : '#showtracker'
+          });
+        });
+
+        $('.blinking-target-tracker').on('click', function ( e ) { 
+          e.preventDefault();
+          $.trackMouse({
+            text : "That mouse will go blind, how much light can it's little eyes handle. Put it away!!!!",
+            target : '#showblinkingtracker',
+            blink : 600
           });
         });
 
