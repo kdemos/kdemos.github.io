@@ -201,12 +201,14 @@ ul, ol, dl {
 }
 
 ul {
-  list-style: inside;
+  list-style-position: inside;
+  list-style: disc;
   padding-left: 20px;
 }
 
 ol {
-  list-style: decimal inside;
+  list-style-position: inside;
+  list-style: decimal;
   padding-left: 20px;
 }
 
@@ -366,10 +368,7 @@ Full-Width Styles
   background: #212121;
 }
 
-p.note {
-  background: #fff;
-  padding: 7px;
-}
+
 
 /*******************************************************************************
 Small Device Styles
