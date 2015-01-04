@@ -1,0 +1,1 @@
+var angudo = angular.module('angudo', []);

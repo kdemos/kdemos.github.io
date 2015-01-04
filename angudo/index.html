@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angudo">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Todo</title>
+    <script src='assets/js/angular.min.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/TasksCtrl.js"></script>
+    <script src="app/services/Storage.js"></script>
+</head>
+<body>
+    <!-- .container -->
+    <div class="container" ng-controller="TasksCtrl">
+
+        <!-- .header-wrap -->
+        <div class="header-wrap">
+            <h1 class="brand">Angudo</h1>
+            <p class="tagline">A todo app built on top of Angular JS and HTML-5</p>
+        </div>
+        <!-- /.header-wrap -->
+        
+        <!-- .tasks-container -->
+        <div class="tasks-container">
+            
+            <div class="create-task-container" ng-model="newTask">
+                <div class="create-task">
+                    <input type="text" placeholder="Don't you have anything to remember?" autofocus class="new-task-text" ng-model="newTask.description">
+                    <input type="hidden" name="task_id" ng-model="taskId">
+                    <ul class="left">
+                        <li><span class="left small-label">Chose Color</span></li>
+                        <li><span ng-click="choseColor('white') " class="left color-box white-color"></span></li>
+                        <li><span ng-click="choseColor('whitish') " class="left color-box whitish-color"></span></li>
+                        <li><span ng-click="choseColor('grey') " class="left color-box grey-color"></span></li>
+                        <li><span ng-click="choseColor('blackish') " class="left color-box blackish-color"></span></li>
+                        <li><input class="left chosen-color" disabled="disabled" type="text" value="white" ng-model="newTask.color"></li>
+                    </ul>
+                    <a href="" class="submit-task btn right blackish-color" ng-click="createTask()">{{ newTask.createText || 'Create' }}</a>
+                    <a href="" class="submit-task btn right" ng-click="resetForm()">Cancel</a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="task-filters">
+                <div class="filter-text left">
+                    <input type="text" class="search-text" placeholder="Search tasks" ng-model="filterTask">
+                </div>
+
+                <div class="filter-btns right">
+                    <ul>
+                        <li class="left"><a href="" ng-click="searchTask('white')"><span class="color-box white-color left"></span>White</a></li>
+                        <li class="left"><a href="" ng-click="searchTask('whitish')"><span class="color-box whitish-color left"></span>Whitish</a></li>
+                        <li class="left"><a href="" ng-click="searchTask('grey')"><span class="color-box grey-color left"></span>Grey</a></li>
+                        <li class="left"><a href="" ng-click="searchTask('blackish')"><span class="color-box blackish-color left"></span>Blackish</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="tasks-outer">
+                <div class="task {{ task.color }}-color completed-{{ task.completed }}" ng-repeat="task in filteredTasks = (tasks | filter:filterTask)">
+
+                    <div ng-hide="task.hide">
+                        <div class="task-content">
+                            {{ task.description }}
+                        </div>
+                        <div class="task-actions right">
+                            <a href="javascript:void(0)" class="complete btn right" ng-click="toggleCompletion(task)">{{ task.completed ? "Uncomplete" : "Complete" }}</a>
+                            <a href="javascript:void(0)" class="btn right" ng-click="toggleHide(task)">Hide</a>
+                            <a href="javascript:void(0)" class="edit btn right" ng-click="edit(task)">Edit</a>
+                            <a href="javascript:void(0)" class="delete btn right" ng-click="delete( task )">Delete</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div ng-show="task.hide">
+                        <div class="task-content text-center">
+                            <a href="javascript:void(0)" class="btn normal-btn" ng-click="toggleHide(task)">Unhide</a>
+                            <a href="javascript:void(0)" class="delete btn normal-btn" ng-click="delete( task )">Delete</a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="task text-center" ng-show="!filteredTasks.length">
+                    No tasks found.
+                </div>
+
+                <div class="task text-center">
+                    <ng-pluralize count="tasks.length" when="pluralizer"></ng-pluralize>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+        <!-- /.tasks-container -->
+    </div>
+    <!-- /.container -->
+</body>
+</html>
